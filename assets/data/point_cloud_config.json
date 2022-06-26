@@ -1,0 +1,16 @@
+{
+	"totalNumOfPoints" : 320125,
+	"origin" : {"x": 0.0, "y": 0.0, "z": 0.0},
+	"rotation" : 0.0,
+	"scale" : {"x": 1.0, "y": 1.0, "z": 1.0},
+	"colorGradient": [
+		{"value" : 0, "color" : "rgb(0,0,255)"},
+		{"value" : 1, "color" : "rgb(0,255,255)"},
+		{"value" : 2, "color" : "rgb(0,255,0)"},
+		{"value" : 3, "color" : "rgb(255,255,0)"},
+		{"value" : 4, "color" : "rgb(255,127,0)"},
+		{"value" : 5, "color" : "rgb(255,0,0)"}
+	],
+	"pointSize" : 2.0,
+	"url" : "https://sgp-server2015x.uwglobe.com/widget/point-cloud-simulation-playback/assets/data/point_cloud_points.json"
+}

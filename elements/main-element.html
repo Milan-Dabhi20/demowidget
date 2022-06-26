@@ -1,0 +1,122 @@
+<link rel="import" href="../../assets/bower_components/polymer/polymer.html">
+<link rel="import" href="../../assets/bower_components/paper-expansion-panel/paper-expansion-panel.html">
+<link rel="import" href="../../assets/bower_components/paper-button/paper-button.html">
+<link rel="import" href="../../assets/bower_components/paper-slider/paper-slider.html">
+<link rel="import" href="../../assets/bower_components/paper-input/paper-input.html">
+<link rel="import" href="styles/main-element-style.html">
+<dom-module id="main-element">
+    <template>
+        <style include="main-element-style"></style>
+        <div id='loading'>
+            <img src='../../assets/images/loader.gif' title='Loading...' alt='Loading...' />
+        </div>
+        <div id='content'>
+            <paper-expansion-panel header="Point Cloud (Load from External)" opened="true" on-toggle="onTogglePanel">
+                <table class="controls">
+                    <tr>
+                        <td colspan="2">
+                            <paper-button on-click="createPointCloud">Create Point Cloud</paper-button>
+                            <paper-button on-click="removePointCloud">Remove Point Cloud</paper-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Point Size:</td>
+                        <td>
+                            <paper-slider class="sliderPointSize" pin snaps min="1" max="100" step="1" value="{{pointSizeValue::change}}" editable disabled></paper-slider>
+                        </td>
+                    </tr>
+                </table>
+            </paper-expansion-panel>
+            <paper-expansion-panel header="Point Cloud (Load from 3DSpace)" on-toggle="onTogglePanel">
+                <div id="divDropArea">
+                    <span>Drop Document Here</span>
+                </div>
+                <table class="controls">
+                    <tr>
+                        <td colspan="2">
+                            <paper-button on-click="removePointCloud">Remove Point Cloud</paper-button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Point Size:</td>
+                        <td>
+                            <paper-slider class="sliderPointSize" id="sliderPointSize" pin snaps min="1" max="100" step="1" value="{{pointSizeValue::change}}" editable disabled></paper-slider>
+                        </td>
+                    </tr>
+                </table>
+            </paper-expansion-panel>
+            <paper-expansion-panel header="Simulation Playback (using Default Models)" on-toggle="onTogglePanel">
+                <table class="controls">
+                    <tr>
+                        <td>Speed:</td>
+                        <td>
+                            <select value="{{playbackDefaultModelsSpeedValue::change}}">
+                                <option value="0.25">0.25x</option>
+                                <option value="0.5">0.5x</option>
+                                <option value="1" selected>1x</option>
+                                <option value="2">2x</option>
+                                <option value="5">5x</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Time:</td>
+                        <td>{{timestamp}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <paper-button on-click="loadDefaultModelsSimPlayback">Load</paper-button>
+                            <paper-button on-click="clearDefaultModelsSimPlayback">Clear</paper-button>
+                            <paper-button class="togglePlaybackBtn" on-click="toggleDefaultModelsSimPlayback">Play</paper-button>
+                        </td>
+                    </tr>
+                </table>
+            </paper-expansion-panel>
+            <paper-expansion-panel header="Simulation Playback (using Custom Vehicle Models)" on-toggle="onTogglePanel">
+                <table class="controls">
+                    <tr>
+                        <td>Speed:</td>
+                        <td>
+                            <select value="{{playbackCustomModelsSpeedValue::change}}">
+                                <option value="0.25">0.25x</option>
+                                <option value="0.5">0.5x</option>
+                                <option value="1" selected>1x</option>
+                                <option value="2">2x</option>
+                                <option value="5">5x</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Time:</td>
+                        <td>{{timestamp}}</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <paper-button on-click="loadCustomModelsSimPlayback">Load</paper-button>
+                            <paper-button on-click="clearCustomModelsSimPlayback">Clear</paper-button>
+                            <paper-button class="togglePlaybackBtn" on-click="toggleCustomModelsSimPlayback">Play</paper-button>
+                        </td>
+                    </tr>
+                    <tr><td>&nbsp;</td></tr>
+                    <tr>
+                        <td>Follow:</td>
+                        <td class="followControls">
+                            <paper-input id="inputFollowType" label="Type" value="CAR"></paper-input>
+                            <paper-input id="inputFollowFeatureId" label="Feature Id" value="1"></paper-input>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <paper-button on-click="setFollow">Set</paper-button>
+                            <paper-button on-click="unsetFollow">Unset</paper-button>
+                        </td>
+                    </tr>
+                </table>
+            </paper-expansion-panel>
+            <paper-expansion-panel id="status" header="Status" opened="true">
+                <div id="status">{{status}}</div>
+            </paper-expansion-panel>
+        </div>
+    </template>
+</dom-module>
+<script src="main-element.js" type="text/javascript"></script>

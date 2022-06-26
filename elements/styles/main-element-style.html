@@ -1,0 +1,84 @@
+<dom-module id="main-element-style">
+    <template>
+        <style>
+            :host {
+                display: block;
+                height: 100%;
+            }
+
+            #loading {
+                display: grid;
+                justify-content: center;
+                text-align: center;
+            }
+
+            #content {
+                display: none;
+            }
+
+            #content > * {
+                padding: 10px;
+            }
+
+            paper-expansion-panel {
+                --paper-expansion-panel-header: {
+                    background-color: #d3d3d3;
+                    border-radius: 5px;
+                    min-height: 35px;
+                    font-size: 14px;
+                    font-weight: 500px;
+                    color: #3d3d3d;
+                    padding: 0px 7px;
+                }
+                --paper-expansion-panel-content: {
+                    padding: 0 15px;
+                }
+                --paper-expansion-panel-toggle: {
+                    padding: 5px;
+                    width: 35px;
+                    height: 35px;
+                }
+            }
+
+            .controls {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 5px 10px;
+            }
+
+            td {
+                vertical-align: middle;
+            }
+
+            paper-button {
+                background-color: #368ec4;
+                color: #fff;
+                padding: 11px 14px 11px 14px;
+                min-width: 72px;
+                text-transform: none;
+                font-size: 12px;
+                margin: 0px 15px 0px 0px;
+            }
+
+            select {
+                width: 100%;
+            }
+
+            .togglePlaybackBtn {
+                margin-left: 30px;
+            }
+
+            #status {
+                padding-top: 10px;
+            }
+
+            .followControls {
+                display: flex;
+            }
+
+            .followControls > * {
+                padding-right: 10px;
+            }
+        </style>
+    </template>
+</dom-module>

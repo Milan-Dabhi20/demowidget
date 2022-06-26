@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:widget="http://www.netvibes.com/ns/">
+
+<head>
+    <title>Point Cloud and Simulation Playback</title>
+    <meta name="author" content="MCN8" />
+    <meta name="description" content="Point Cloud and Simulation Playback" />
+    <meta name="keywords" content="point cloud,simulation,playback,widget" />
+    <meta name="apiVersion" content="0.1" />
+    <meta name="debugMode" content="true" />
+    <meta name="strictMode" content="false" />
+    <!-- Application Standalone emulation files -->
+    <link rel="stylesheet" type="text/css" href="http://uwa.netvibes.com/lib/c/UWA/assets/css/standalone.css" />
+    <script type="text/javascript" src="http://uwa.netvibes.com/lib/c/UWA/js/UWA_Standalone_Alone.js"></script>
+    <!-- Other Scripts -->
+    <script type="text/javascript" src="../assets/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../assets/bower_components/polymer/polymer.html">
+    <link rel="import" href="elements/main-element.html">
+    <!-- Application Preferences -->
+    <widget:preferences>
+        <widget:preference type="text" name="pointCloudConfigUrl" label="Point Cloud Config Url" defaultValue=''></widget:preference>
+        <widget:preference type="text" name="simPlaybackDataUrlDefault" label="Simuation Playback Data Url (Default Models)" defaultValue=''></widget:preference>
+        <widget:preference type="text" name="simPlaybackDataUrlCustom" label="Simuation Playback Data Url (Custom Vehicle Models)" defaultValue=''></widget:preference>
+    </widget:preferences>
+</head>
+
+<body>
+    <main-element></main-element>
+</body>
+
+</html>
