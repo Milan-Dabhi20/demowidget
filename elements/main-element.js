@@ -131,7 +131,7 @@ Polymer({
     loadCustomModelsSimPlayback: function() {
         this.status = "Loading simulation playback";
 
-        var sampleDataUrl = base + "/assets/data/simulation_playback_traffic.json";
+        var sampleDataUrl = base + "/assets/data/sample_traffic.json";
         var userDataUrl = widget.getValue("simPlaybackDataUrlCustom");
         var dataUrl = userDataUrl || sampleDataUrl;
         var options = {
