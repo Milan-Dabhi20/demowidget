@@ -22,10 +22,10 @@ newTrafficJson = []
 for eachData, eachCoordinate in zip(trafficData, addressCoordinates):
     newDict = {"timestamp":eachData["timestamp"],
                 "geoJson":{"type":"FeatureCollection",
-                        "features":[{"feature_type":"SUV", 
-                                     "coordinates":eachCoordinate,
-                                     "feature_id":1,
-                                     "orientation":eachData["geoJson"]["features"][0]["orientations"][2],
+                        "features":[{"feature_type":["SUV"], 
+                                     "coordinates":[eachCoordinate],
+                                     "feature_id":[1],
+                                     "orientation":[eachData["geoJson"]["features"][0]["orientations"][2]],
                                      "type":"Point"}]}}
     newTrafficJson.append(newDict)
     
