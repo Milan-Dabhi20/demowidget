@@ -4,14 +4,14 @@ from numpy import add
 import pandas as pd
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-f = open(os.path.join(BASE_DIR ,'rennes/Addresses.geojson'), "r")
+f = open(os.path.join(BASE_DIR ,'rennes/lampposts.geojson'), "r")
 f2 = open(os.path.join(BASE_DIR ,'assets/data/simulation_playback_traffic.json'), "r")
 data = json.load(f)
 addressCoordinates = []
 
 for feature in data["features"]:
     addressCoordinates.append(feature["geometry"]["coordinates"])
-    if len(addressCoordinates) == 500:
+    if len(addressCoordinates) == 90:
         break
  #   print(feature["geometry"]["coordinates"])
 
@@ -22,10 +22,10 @@ newTrafficJson = []
 for eachData, eachCoordinate in zip(trafficData, addressCoordinates):
     newDict = {"timestamp":eachData["timestamp"],
                 "geoJson":{"type":"FeatureCollection",
-                        "features":[{"feature_type":["SUV"], 
+                        "features":[{"feature_type":["CAR"], 
                                      "coordinates":[eachCoordinate],
                                      "feature_id":[1],
-                                     "orientation":[eachData["geoJson"]["features"][0]["orientations"][2]],
+                                     "orientations":[eachData["geoJson"]["features"][0]["orientations"][0]],
                                      "type":"Point"}]}}
     newTrafficJson.append(newDict)
     
@@ -33,3 +33,4 @@ jsonString = json.dumps(newTrafficJson)
 jsonFile = open(os.path.join(BASE_DIR ,'assets/data/sample_traffic.json'), "w")
 jsonFile.write(jsonString)
 jsonFile.close()
+print(len(newTrafficJson))

@@ -131,41 +131,41 @@ Polymer({
     loadCustomModelsSimPlayback: function() {
         this.status = "Loading simulation playback";
 
-        var sampleDataUrl = base + "/assets/data/sample_traffic.json";
+        var sampleDataUrl = base + "/assets/data/sample_traffic2.json";
         var userDataUrl = widget.getValue("simPlaybackDataUrlCustom");
         var dataUrl = userDataUrl || sampleDataUrl;
         var options = {
             featureTypes: [
                 {
                     "type": "CAR",
-                    "color": "rgb(30,144,255)",
+                    "color": "rgb(255,0,0)",
                     "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/car.3dxc",
-                    "scale": [1.2, 1.2, 0.6]
-                },
-                {
-                    "type": "SUV",
-                    "color": "rgb(255,140,0)",
-                    "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/suv.3dxc",
-                    "scale": [1.2, 1.2, 0.6]
-                },
-                {
-                    "type": "VAN",
-                    "color": "rgb(255,255, 255)",
-                    "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/van.3dxc",
-                    "scale": [1.2, 1.2, 0.6]
-                },
-                {
-                    "type": "TRUCK",
-                    "color": "rgb(220,20,60)",
-                    "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/truck.3dxc",
-                    "scale": [1.2, 1.2, 0.6]
-                },
-                {
-                    "type": "BUS",
-                    "color": "rgb(255,255,51)",
-                    "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/bus.3dxc",
-                    "scale": [1.2, 1.2, 0.6]
-                }
+                    "scale": [2.4, 2.4, 1.2]
+                }//,
+                // {
+                //     "type": "SUV",
+                //     "color": "rgb(255,0,0)",
+                //     "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/suv.3dxc",
+                //     "scale": [2.4, 2.4, 1.2]
+                // },
+                // {
+                //     "type": "VAN",
+                //     "color": "rgb(255,255, 255)",
+                //     "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/van.3dxc",
+                //     "scale": [1.2, 1.2, 0.6]
+                // },
+                // {
+                //     "type": "TRUCK",
+                //     "color": "rgb(220,20,60)",
+                //     "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/truck.3dxc",
+                //     "scale": [1.2, 1.2, 0.6]
+                // },
+                // {
+                //     "type": "BUS",
+                //     "color": "rgb(255,255,51)",
+                //     "model": "https://sgp-server2015x.uwglobe.com/widget/assets/models3d/bus.3dxc",
+                //     "scale": [1.2, 1.2, 0.6]
+                // }
             ]
         };
 
